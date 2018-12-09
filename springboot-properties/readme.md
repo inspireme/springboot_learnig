@@ -1,6 +1,6 @@
-##spring boot properties
+## spring boot properties
 
-###検証ポイント
+### 検証ポイント
 - クラスフィールドに設定値を利用する(SPEL)
 - プロパティファイルにSPELを使い方
 - ランダム(SPELにrandomの利用)
