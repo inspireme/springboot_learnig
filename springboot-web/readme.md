@@ -1,4 +1,4 @@
-##初めてのspringboot web app
+## 初めてのspringboot web app
 
 ### prjのフォルダ構成の説明
 - src/main/java/jp.whisper.learning.firstweb.SpringbootWebApplication
@@ -12,7 +12,7 @@
 
 
 
-###検証ポイント
+### 検証ポイント
 - 外部立ち上げられたサーバーの代わりに, 埋め込んだコンテナーを利用する
 - restfull serviceを立ち上げる
 - lombokを利用して、通常domain class に作らなければならないgetter/setterメソッドを省くことが可能。さらに@Slf4jを利用することで、log（slf4j loggerインスタンス）を生成してくれる
