@@ -1,7 +1,8 @@
 # springboot learning
 
-###ŠJ”­ŠÂ‹«à–¾
-- java 8 
+###é–‹ç™ºç’°å¢ƒèª¬æ˜
+- java 8
 - spring boot: 2.1.1.RELEASE
-- IDEF[pleiades-2018-09-java-win-64bit-jre_20181004](http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/2018/pleiades-2018-09-java-win-64bit-jre_20181004.zip "eclipse“‡”Å")
+- IDEï¼š[pleiades-2018-09-java-win-64bit-jre_20181004](http://ftp.jaist.ac.jp/pub/mergedoc/pleiades/2018/pleiades-2018-09-java-win-64bit-jre_20181004.zip "eclipseçµ±åˆç‰ˆ")
 - maven: 3.0.3
+
