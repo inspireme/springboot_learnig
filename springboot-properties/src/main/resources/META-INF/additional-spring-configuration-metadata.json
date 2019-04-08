@@ -1,0 +1,9 @@
+{
+ "properties" : [
+ 	{
+ 		"name" : "app.address",
+ 		"type" : "java.lang.String",
+ 		"description" : "アプリケーション URL"
+ 	}
+  ]
+}
