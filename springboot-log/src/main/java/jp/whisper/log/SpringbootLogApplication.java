@@ -9,13 +9,13 @@ import ch.qos.logback.classic.Logger;
 @SpringBootApplication
 public class SpringbootLogApplication {
 
-	public static void main(String[] args) {
-		Logger logger = (Logger) LoggerFactory.getLogger(SpringbootLogApplication.class);
+    public static void main(String[] args) {
+        Logger logger = (Logger) LoggerFactory.getLogger(SpringbootLogApplication.class);
 
-		logger.info("ログレベル [INFO] で出力されるログ");
-		logger.debug("ログレベル [DEBUG] で出力されるログ");
+        logger.info("ログレベル [INFO] で出力されるログ");
+        logger.debug("ログレベル [DEBUG] で出力されるログ");
 
-		SpringApplication.run(SpringbootLogApplication.class, args);
-	}
+        SpringApplication.run(SpringbootLogApplication.class, args);
+    }
 
 }

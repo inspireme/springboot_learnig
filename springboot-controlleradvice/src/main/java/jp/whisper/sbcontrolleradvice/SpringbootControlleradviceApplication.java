@@ -1,0 +1,13 @@
+package jp.whisper.sbcontrolleradvice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringbootControlleradviceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootControlleradviceApplication.class, args);
+    }
+
+}

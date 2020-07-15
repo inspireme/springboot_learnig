@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        function callback(data) {
+            alert(data.message);
+        }
+
+        function myCallback(data) {
+            console.log(data.postalcodes)
+        }
+    </script>
+    <!--    <script type="text/javascript" src="http://localhost:8080/js/server.js"></script>-->
+</head>
+<body>
+<input type="button" value="GET" id="getInfo">
+<input type="button" value="POST" id="postInfo">
+<input type="button" value="JSONP" id="jsonp">
+<input type="button" value="JSONP-ajax" id="ajax-jsonp">
+
+<div id="msg"></div>
+<script>
+    function addScriptTag(src) {
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        script.src = src;
+        document.body.appendChild(script);
+    }
+
+    $(function () {
+        addScriptTag("http://localhost:8080/js/server.js");
+
+        $("#getInfo").click(function () {
+            $.get("http://localhost:8080/getProject", function (msg) {
+                $("#msg").html(msg);
+            });
+        });
+
+        $("#postInfo").click(function () {
+            $.ajax("http://localhost:8080/createProject", {
+                type: "post",
+                success: function (msg) {
+                    $("#msg").html(msg);
+                }
+            });
+        });
+
+        $("#jsonp").click(function () {
+            $.getJSON("http://www.geonames.org/postalCodeLookupJSON?postalcode=10504&country=US&callback=?", function (data) {
+                console.log(data.postalcodes);
+            })
+        });
+
+        $("#ajax-jsonp").click(function () {
+            $.ajax("http://www.geonames.org/postalCodeLookupJSON?postalcode=10504&country=US&callback=?", {
+                dataType: "jsonp",
+                jsonpCallback : "myCallback",
+                success : function(data){
+                    alert(data.postalcodes.length);
+                }
+            })
+        });
+
+
+    });
+
+</script>
+</body>
+</html>
