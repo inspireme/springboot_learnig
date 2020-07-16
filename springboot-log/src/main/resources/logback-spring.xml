@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration>
 <configuration>
     <!-- Spring Bootデフォルト設定読込 -->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <include resource="logback-file-appender.xml"/>
+
     <!-- 開発環境では、INFO レベル以上を console に出力する -->
     <springProfile name="develop">
         <root level="DEBUG">
-            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="STDOUT"/>
         </root>
     </springProfile>
     <!-- テスト・本番環境では、INFO レベル以上を ファイル に出力する -->
     <springProfile name="test, production">
-        <include resource="logback-file-appender.xml"/>
+        <logger name="jp.whisper" level="INFO">
+            <appender-ref ref="APPLICATION_LOG_FILE_B" />
+        </logger>
+
         <root level="INFO">
+            <appender-ref ref="STDOUT" />
             <appender-ref ref="ASYNC_APPLICATION_LOG_FILE"/>
         </root>
     </springProfile>
