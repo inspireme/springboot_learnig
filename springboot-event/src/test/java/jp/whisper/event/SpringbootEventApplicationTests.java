@@ -1,5 +1,7 @@
 package jp.whisper.event;
 
+import jp.whisper.event.app.MyApplicationEvent;
+import jp.whisper.event.app.SpringBootBeanUtil;
 import jp.whisper.event.project.Project;
 import jp.whisper.event.project.ProjectService;
 import jp.whisper.event.project.ProjectService2;
@@ -7,6 +9,7 @@ import jp.whisper.event.project.ProjectService3;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootTest
 class SpringbootEventApplicationTests {
@@ -41,6 +44,12 @@ class SpringbootEventApplicationTests {
         project.setId(4);
         this.projectService3.updateProject(project);
 
+    }
+
+    @Test
+    public void testApplicationEvent(){
+        ApplicationContext context = SpringBootBeanUtil.getApplicationContext();
+        context.publishEvent(new MyApplicationEvent(new Object(), "my application event!"));
     }
 
 }
