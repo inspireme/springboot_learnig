@@ -1,5 +1,6 @@
 package jp.whisper.sbproperties;
 
+import jp.whisper.sbproperties.bean.AppProperties;
 import jp.whisper.sbproperties.config.AppConfig;
 import jp.whisper.sbproperties.config.UserConfig2;
 import jp.whisper.sbproperties.config.UserConfig;
@@ -19,11 +20,16 @@ class SpringbootPropertiesApplicationTests {
     @Autowired
     UserConfig2 userConfig2;
 
+    @Autowired
+    AppProperties appProperties;
+
     @Test
     void contextLoads() {
         System.out.println(appConfig.toString());
         System.out.println(userConfig.toString());
         System.out.println(userConfig2.toString());
+
+        System.out.println(appProperties.toString());
     }
 
 }
