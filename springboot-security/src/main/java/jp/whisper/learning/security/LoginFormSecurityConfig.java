@@ -15,12 +15,12 @@ import java.io.PrintWriter;
 
 /**
  * @ClassName SecurityConfig
- * @Description TODO
+ * @Description single securityconfig
  * @Author whisper
  * @Date 2020/05/04 15:06
  * @Version 1.0
  */
-@Configuration
+//@Configuration
 public class LoginFormSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     PasswordEncoder passwordEncoder() {
