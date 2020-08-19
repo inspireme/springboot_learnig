@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jp.whisper.securitydb.mapper.UserMapper">
+    <select id="getUserByUsername" resultType="jp.whisper.securitydb.bean.User">
+        select * from sb_user where username = #{username}
+    </select>
+
+    <select id="getRolesByUserId" resultType="jp.whisper.securitydb.bean.Role">
+        select * from sb_role where id in (select role_id from sb_user_role where user_id = #{userId})
+    </select>
+
+</mapper>
