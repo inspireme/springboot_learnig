@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="jp.whisper.securitydb.mapper.MenuMapper">
+    <resultMap id="getAllMenusResultMap" type="jp.whisper.securitydb.bean.Menu">
+        <id property="id" column="id"></id>
+        <result property="pattern" column="pattern"></result>
+        <collection property="roles" ofType="jp.whisper.securitydb.bean.Role">
+            <id property="id" column="roleId"></id>
+            <result property="name" column="name"></result>
+            <result property="nameZh" column="nameZh"/>
+        </collection>
+    </resultMap>
+
+    <select id="getAllMenus" resultMap="getAllMenusResultMap">
+        select
+    mu.*
+    , rl.id as roleId
+    , rl.name as name
+    , rl.nameZh as nameZh
+from
+    sb_menu mu
+    left join sb_menu_role mr
+        on mu.id = mr.menu_id
+    left join sb_role rl
+        on rl.id = mr.role_id
+    </select>
+
+</mapper>
